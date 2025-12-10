@@ -75,4 +75,9 @@ Questo progetto utilizza **GitFlow** per l'organizzazione dei branch:
 - `main`: versione stabile di produzione
 - `develop`: branch di sviluppo principale
 - `feature/*`: branch per nuove funzionalità
+
+## 📚 Documentazione
+La documentazione completa del progetto generata con Doxygen è disponibile online:
+
+🔗 **[Visualizza Documentazione](https://vittorio-francesco-ardente.github.io/GPO_Ardente_Taramelli/)**
 >>>>>>> df5b7928b06135097afa0b7eb9a263dfff317c1d
