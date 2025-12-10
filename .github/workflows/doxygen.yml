@@ -26,13 +26,12 @@ jobs:
       
       - name: Genera documentazione
         run: |
-          cd docs
-          doxygen Doxyfile
+          doxygen docs/Doxyfile
       
       - name: Pubblica su GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/html    # Torna a questo perché è il percorso standard
+          publish_dir: ./docs/html
           publish_branch: gh-pages
           force_orphan: true
