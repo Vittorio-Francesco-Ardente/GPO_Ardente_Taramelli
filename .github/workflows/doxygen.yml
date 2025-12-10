@@ -12,9 +12,8 @@ permissions:
   id-token: write
 
 jobs:
-  build-and-deploy:
+    build-and-deploy:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,10 +21,11 @@ jobs:
       - name: Installa Doxygen
         run: |
           sudo apt-get update
-          sudo apt-get install -y doxygen graphviz
+          sudo apt-get install -y doxygen
       
       - name: Genera documentazione
         run: |
+          mkdir -p docs/html
           doxygen docs/Doxyfile
       
       - name: Pubblica su GitHub Pages
