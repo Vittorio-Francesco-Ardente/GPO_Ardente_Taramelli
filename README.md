@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 # 🔥 GPO Ardente Taramelli – Verifica di laboratorio 2
-
+![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+---
 Benvenuti nella repository ufficiale del progetto **GPO Ardente Taramelli**!  
 Questa repo non è solo un contenitore di codice: è un vero e proprio **laboratorio di idee, collaborazione e innovazione** 💡.  
 
