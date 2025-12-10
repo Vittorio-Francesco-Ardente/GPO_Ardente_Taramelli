@@ -206,7 +206,7 @@ STRIP_FROM_INC_PATH    =
 # support long names like on DOS, Mac, or CD-ROM.
 # The default value is: NO.
 
-SHORT_NAMES            = NO
+SHORT_NAMES            = YES
 
 # If the JAVADOC_AUTOBRIEF tag is set to YES then Doxygen will interpret the
 # first line (until the first dot, question mark or exclamation mark) of a
@@ -667,7 +667,7 @@ INTERNAL_DOCS          = NO
 # Possible values are: SYSTEM, NO and YES.
 # The default value is: SYSTEM.
 
-CASE_SENSE_NAMES       = SYSTEM
+CASE_SENSE_NAMES       = NO
 
 # If the HIDE_SCOPE_NAMES tag is set to NO then Doxygen will show members with
 # their full class and namespace scopes in the documentation. If set to YES, the
@@ -1005,7 +1005,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = ../Progetto/Applicativo_Ardente
+INPUT                  = ../progetto/Applicativo_Ardente
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses

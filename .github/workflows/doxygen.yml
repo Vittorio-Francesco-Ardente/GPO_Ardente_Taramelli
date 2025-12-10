@@ -33,5 +33,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/html/html   # Aggiungi /html alla fine
+          publish_dir: ./docs/html    # Torna a questo perché è il percorso standard
           publish_branch: gh-pages
+          force_orphan: true
