@@ -65,6 +65,12 @@ Ogni commit racconta una storia, ogni branch è un’idea che prende vita, ogni 
 👉 Qui non si impara solo a programmare, ma a **lavorare come veri sviluppatori**.  
 Un piccolo assaggio di futuro, già oggi. 🌟
 =======
-# GPO_Ardente_Taramelli_CONSEGNA
+# GPO_Ardente_Taramelli
 Repository relativo al progetto di realizzare per GPO!
+
+## 🔄 Workflow
+Questo progetto utilizza **GitFlow** per l'organizzazione dei branch:
+- `main`: versione stabile di produzione
+- `develop`: branch di sviluppo principale
+- `feature/*`: branch per nuove funzionalità
 >>>>>>> df5b7928b06135097afa0b7eb9a263dfff317c1d
