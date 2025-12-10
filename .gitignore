@@ -1,0 +1,35 @@
+## Ignora file compilati C#
+*.exe
+*.dll
+*.pdb
+*.cache
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Cartelle build
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+
+## Visual Studio
+.vs/
+*.vsidx
+*.vspscc
+
+## File di sistema
+.DS_Store
+Thumbs.db
+
+## NuGet
+*.nupkg
+packages/
+
+## Doxygen output (teniamo solo i sorgenti)
+docs/html/
+docs/latex/
+docs/xml/
