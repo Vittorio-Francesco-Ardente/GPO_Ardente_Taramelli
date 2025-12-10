@@ -102,6 +102,25 @@ La separazione di responsabilità tra documentazione (Taramelli) e sviluppo (Ard
 
 **Raccomandazione**: continuare a mantenere aggiornati i changelog ad ogni modifica significativa, includendo autore, data e descrizione delle modifiche (es. CHANGELOG.md). 📝🕒
 
+### Funzionalità Extra Implementate
+
+#### 1. GitFlow Workflow ✅
+- Creato branch `develop` per lo sviluppo
+- Branch `main` riservato alla versione stabile
+- Dimostrato il workflow con merge graduali
+
+#### 2. Pull Requests ✅
+- Utilizzata Pull Request per merge delle modifiche
+- Revisione del codice tramite interfaccia GitHub
+- Branch eliminati dopo il merge per pulizia
+
+#### 3. Pipeline CI/CD ✅
+- GitHub Actions configurata per generazione automatica documentazione
+- Doxygen eseguito ad ogni push su `main`
+- Problema iniziale di `OUTPUT_DIRECTORY` risolto usando un percorso relativo (`html`)
+- Documentazione pubblicata su GitHub Pages
+- Link: [https://vittorio-francesco-ardente.github.io/GPO_Ardente_Taramelli/](https://vittorio-francesco-ardente.github.io/GPO_Ardente_Taramelli/)
+
 ## Riepilogo sintetico finale 📝
 
 - **Chi**: Taramelli (documentazione) 🧾 | Ardente (sviluppo e repository) 💻
