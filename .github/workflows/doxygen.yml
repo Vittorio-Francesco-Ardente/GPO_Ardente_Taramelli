@@ -26,6 +26,7 @@ jobs:
       - name: Genera documentazione
         run: |
           mkdir -p docs/html
+          # Eseguiamo doxygen dalla root, puntando al file che sta in docs/
           doxygen docs/Doxyfile
 
       - name: Pubblica su GitHub Pages
