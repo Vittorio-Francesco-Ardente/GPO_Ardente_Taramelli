@@ -25,15 +25,13 @@ jobs:
       
       - name: Genera documentazione
         run: |
+          mkdir -p docs/html
           doxygen docs/Doxyfile
-          # Vediamo dove sono finiti i file (per debug nei log)
-          ls -R docs/
 
       - name: Pubblica su GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          # Proviamo a pubblicare TUTTA la cartella docs per essere sicuri
           publish_dir: ./docs/html
           publish_branch: gh-pages
           force_orphan: true
