@@ -1,6 +1,8 @@
 <<<<<<< HEAD
 # 🔥 GPO Ardente Taramelli – Verifica di laboratorio 2
-
+![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+---
 Benvenuti nella repository ufficiale del progetto **GPO Ardente Taramelli**!  
 Questa repo non è solo un contenitore di codice: è un vero e proprio **laboratorio di idee, collaborazione e innovazione** 💡.  
 
@@ -9,7 +11,7 @@ Questa repo non è solo un contenitore di codice: è un vero e proprio **laborat
 ## 📅 Informazioni principali
 - **Anno accademico:** 2025 – 2026  
 - **Consegna finale:** 🗓️ 12 Dicembre 2025 ore 18:00  
-- **Obiettivo:** da definire...
+- **Obiettivo:** realizzazione di una pizzeria
 
 ---
 
@@ -73,4 +75,9 @@ Questo progetto utilizza **GitFlow** per l'organizzazione dei branch:
 - `main`: versione stabile di produzione
 - `develop`: branch di sviluppo principale
 - `feature/*`: branch per nuove funzionalità
+
+## 📚 Documentazione
+La documentazione completa del progetto generata con Doxygen è disponibile online:
+
+🔗 **[Visualizza Documentazione](https://vittorio-francesco-ardente.github.io/GPO_Ardente_Taramelli/)**
 >>>>>>> df5b7928b06135097afa0b7eb9a263dfff317c1d
