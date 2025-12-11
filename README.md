@@ -1,70 +1,42 @@
-<<<<<<< HEAD
-# 🔥 GPO Ardente Taramelli – Verifica di laboratorio 2
+💾 Feature: Storico Ordini Persistente
+Branch: feature/salva-storico | Stato: ✅ Completato
 
-Benvenuti nella repository ufficiale del progetto **GPO Ardente Taramelli**!  
-Questa repo non è solo un contenitore di codice: è un vero e proprio **laboratorio di idee, collaborazione e innovazione** 💡.  
+Questa branch introduce la funzionalità critica di salvataggio permanente degli ordini. Permette alla pizzeria di mantenere un registro indelebile di tutte le transazioni su file locale, garantendo sicurezza dei dati e tracciabilità.
 
----
+🚀 Cosa fa questa feature?
+Quando l'utente clicca su "Salva Storico", il sistema esegue una "fotografia" dell'ordine attuale e la archivia in modo sicuro.
 
-## 📅 Informazioni principali
-- **Anno accademico:** 2025 – 2026  
-- **Consegna finale:** 🗓️ 12 Dicembre 2025 ore 18:00  
-- **Obiettivo:** da definire...
+✨ Punti di Forza
+📝 Modalità Append: Scrive in coda al file StoricoOrdini.txt senza mai sovrascrivere i dati passati.
+🧠 Smart Grouping: Usa LINQ per raggruppare le pizze identiche (es. scrive 2x Margherita invece di ripeterla due volte).
+🛡️ Crash-Proof: Sistema di gestione errori avanzato (file in uso, percorsi errati, permessi negati).
+🔒 Validazione: Impedisce il salvataggio di ordini vuoti o nulli.
+⚙️ Logica di Funzionamento
+Il flusso è progettato per garantire l'integrità dei dati prima della scrittura:
 
----
+mermaid
 
-## 🎯 Missione del progetto
-In questa Unità di Apprendimento vogliamo dimostrare che programmare non significa solo scrivere codice, ma anche:
-- 📌 Gestire il versionamento con Git/GitHub  
-- 📌 Documentare in modo chiaro e professionale  
-- 📌 Testare e validare le funzionalità  
-- 📌 Collaborare come un vero team di sviluppo  
+graph LR
+    A[🖱️ Click] --> B{🍕 Ordine Valido?}
+    B -->|✅ Sì| C{📂 File Accessibile?}
+    C -->|✅ Sì| D[📊 Raggruppa Dati]
+    D -->|💾| E[Scrittura su .txt]
+    B & C -->|❌ No| F[⚠️ Feedback Utente]
+📄 Esempio Output
+Il file generato è ottimizzato per la leggibilità umana e per future analisi dati.
 
-Il nostro obiettivo è **creare, estendere e documentare** un progetto software, seguendo le buone pratiche di lavoro in team e simulando un workflow aziendale.
+text
 
----
+ID: 0001 | DATA: 15/01/2026 14:30:25 | ORDINE: 2x Margherita, 1x Capricciosa
+ID: 0002 | DATA: 15/01/2026 15:45:12 | ORDINE: 1x Marinara, 3x Quattro formaggi
+ID: 0003 | DATA: 15/01/2026 16:20:08 | ORDINE: 1x Salmone
+🛠️ Dettagli Tecnici
+File Target: AppDomain.BaseDirectory/StoricoOrdini.txt
+Gestione Errori: Try/Catch specifici per IOException, UnauthorizedAccessException, PathTooLongException.
+Feedback: MessageBox informative con icone differenziate (Info/Warning/Error).
+<div align="center">
+Sviluppato da: Ardente & Taramelli (5^Ci)
+<br>
+📅 Anno Scolastico 2025/26
 
-## 🛠️ Workflow operativo
-1. 📂 Partire da un progetto esistente (o crearne uno nuovo)  
-2. 🖊️ Scrivere un `README.md` per il progetto allo stato attuale  
-3. 💡 Ideare **due nuove feature**  
-4. 🌱 Creare un branch dedicato per ciascuna feature  
-5. 📄 Documentare la feature (`feature_x.md`, `feature_y.md`)  
-6. ⚙️ Implementare la feature con:
-   - Commenti chiari
-   - Documentazione automatica (es. Doxygen)
-   - Unit tests
-   - Aggiornamento del README se necessario  
-7. 🔀 Fare il merge dei branch in `main`  
-8. 📊 Riepilogare la suddivisione dei compiti (`riepilogo.md`)  
-
----
-
-## 👥 Collaborazione
-Il lavoro è da svolgere **in coppie**.  
-Il voto sarà uguale per entrambi, salvo evidenti differenze di partecipazione.  
-
-👨‍🏫 Docenti da aggiungere come collaboratori:
-- simone.arcidiacono@itisdalmine.edu.it  
-- marco.magni@itisdalmine.edu.it  
-
----
-
-## ⭐ Extra Points
-Per rendere il progetto ancora più interessante e completo:
-- Simulazione del workflow **GitFlow**  
-- Uso di *issues* e *pull requests* per tracciare attività  
-- Pipeline di **CI/CD** per la documentazione automatica  
-
----
-
-## 🚀 Perché questo progetto è speciale?
-Questa repository non è solo un compito: è un **esperimento di collaborazione reale**.  
-Ogni commit racconta una storia, ogni branch è un’idea che prende vita, ogni merge è un passo verso la consegna finale.  
-
-👉 Qui non si impara solo a programmare, ma a **lavorare come veri sviluppatori**.  
-Un piccolo assaggio di futuro, già oggi. 🌟
-=======
-# GPO_Ardente_Taramelli_CONSEGNA
-Repository relativo al progetto di realizzare per GPO!
->>>>>>> df5b7928b06135097afa0b7eb9a263dfff317c1d
+</div>
