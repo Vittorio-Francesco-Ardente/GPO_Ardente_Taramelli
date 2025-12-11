@@ -11,7 +11,7 @@ Questa repo non è solo un contenitore di codice: è un vero e proprio **laborat
 ## 📅 Informazioni principali
 - **Anno accademico:** 2025 – 2026  
 - **Consegna finale:** 🗓️ 12 Dicembre 2025 ore 18:00  
-- **Obiettivo:** da definire...
+- **Obiettivo:** realizzazione di una pizeria
 
 ---
 
