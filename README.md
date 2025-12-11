@@ -1,42 +1,122 @@
-💾 Feature: Storico Ordini Persistente
-Branch: feature/salva-storico | Stato: ✅ Completato
+# 🧾 Funzione `MostraScontrino_Click`
 
-Questa branch introduce la funzionalità critica di salvataggio permanente degli ordini. Permette alla pizzeria di mantenere un registro indelebile di tutte le transazioni su file locale, garantendo sicurezza dei dati e tracciabilità.
+**File:** `MostraScontrino_Function.txt` | **Versione:** 1.1
 
-🚀 Cosa fa questa feature?
-Quando l'utente clicca su "Salva Storico", il sistema esegue una "fotografia" dell'ordine attuale e la archivia in modo sicuro.
+---
 
-✨ Punti di Forza
-📝 Modalità Append: Scrive in coda al file StoricoOrdini.txt senza mai sovrascrivere i dati passati.
-🧠 Smart Grouping: Usa LINQ per raggruppare le pizze identiche (es. scrive 2x Margherita invece di ripeterla due volte).
-🛡️ Crash-Proof: Sistema di gestione errori avanzato (file in uso, percorsi errati, permessi negati).
-🔒 Validazione: Impedisce il salvataggio di ordini vuoti o nulli.
-⚙️ Logica di Funzionamento
-Il flusso è progettato per garantire l'integrità dei dati prima della scrittura:
+Questa funzione **calcola il totale dell'ordine corrente** e genera uno **scontrino fiscale formattato** che viene visualizzato a video tramite una MessageBox.
 
-mermaid
+---
 
-graph LR
-    A[🖱️ Click] --> B{🍕 Ordine Valido?}
-    B -->|✅ Sì| C{📂 File Accessibile?}
-    C -->|✅ Sì| D[📊 Raggruppa Dati]
-    D -->|💾| E[Scrittura su .txt]
-    B & C -->|❌ No| F[⚠️ Feedback Utente]
-📄 Esempio Output
-Il file generato è ottimizzato per la leggibilità umana e per future analisi dati.
+## 🚀 Cosa fa questa funzione?
 
-text
+Quando l'utente clicca su **"Mostra Conto"**, il sistema genera uno scontrino completo con:
 
-ID: 0001 | DATA: 15/01/2026 14:30:25 | ORDINE: 2x Margherita, 1x Capricciosa
-ID: 0002 | DATA: 15/01/2026 15:45:12 | ORDINE: 1x Marinara, 3x Quattro formaggi
-ID: 0003 | DATA: 15/01/2026 16:20:08 | ORDINE: 1x Salmone
-🛠️ Dettagli Tecnici
-File Target: AppDomain.BaseDirectory/StoricoOrdini.txt
-Gestione Errori: Try/Catch specifici per IOException, UnauthorizedAccessException, PathTooLongException.
-Feedback: MessageBox informative con icone differenziate (Info/Warning/Error).
+- 🏪 Intestazione pizzeria (Ardente-Taramelli)
+- 📅 Data e ora corrente
+- 🔢 Numero progressivo ordine
+- 🍕 Dettaglio pizze raggruppate per tipo
+- 💶 Prezzi unitari e subtotali
+- 💰 Totale complessivo
+- 😊 Messaggio di ringraziamento
+
+---
+
+## ✨ Punti di Forza
+
+- 📊 **Raggruppamento LINQ**: Unisce pizze identiche (es. `3x Margherita` invece di 3 righe separate)
+- 🧮 **Calcolo automatico**: Totale basato sul listino prezzi configurato
+- 🎨 **Formato ASCII art**: Scontrino professionale e leggibile
+- ✅ **Validazione completa**: Controlla ordine vuoto e listino prezzi
+- 🆔 **Tracciabilità**: Ogni scontrino ha un ID univoco progressivo
+
+---
+
+## ⚙️ Logica di Funzionamento
+
+Il flusso garantisce l'**integrità dei dati** prima della visualizzazione:
+```mermaid
+graph TD
+    A[👤 Utente clicca Conto] --> B{🍕 Ci sono pizze?}
+    B -->|❌ No| C[⚠️ Messaggio: Ordine vuoto]
+    B -->|✅ Sì| D{💶 Listino disponibile?}
+    D -->|❌ No| E[⚠️ Errore configurazione]
+    D -->|✅ Sì| F[📊 Raggruppa pizze LINQ]
+    F --> G[💰 Calcola subtotali]
+    G --> H[➕ Somma totale]
+    H --> I[🎨 Formatta scontrino ASCII]
+    I --> J[📱 Mostra MessageBox]
+```
+
+---
+
+## 📄 Esempio Output
+
+Lo scontrino generato è ottimizzato per la **leggibilità**:
+```text
+╔═══════════════════════════════════════════╗
+║       🍕 PIZZERIA ARDENTE-TARAMELLI       ║
+╚═══════════════════════════════════════════╝
+
+📅 Data: 11/12/2025 14:30:15
+🔢 Ordine N°: 00042
+
+─────────────────────────────────────────────
+
+🍕 Margherita              x 2
+   € 6.50 cad.                    € 13.00
+
+🍕 Diavola                 x 1
+   € 7.50 cad.                    €  7.50
+
+🍕 Quattro Formaggi        x 3
+   € 8.00 cad.                    € 24.00
+
+─────────────────────────────────────────────
+
+💰 TOTALE:                        € 44.50
+
+═════════════════════════════════════════════
+        Grazie per la vostra fiducia! 😊
+═════════════════════════════════════════════
+```
+
+---
+
+## 🛠️ Dettagli Tecnici
+
+- **Tecnologia**: LINQ per aggregazione dati
+- **UI**: Windows Forms MessageBox
+- **Formato Data**: `dd/MM/yyyy HH:mm:ss`
+- **Gestione Errori**: Validazione ordine vuoto e listino prezzi mancante
+- **Output**: Scontrino ASCII art formattato
+
+---
+
+## 🧪 Matrice dei Test
+
+| ID | Scenario | Input | Output Atteso | Risultato |
+|----|----------|-------|---------------|-----------|
+| T01 | Ordine standard | 2x Margherita, 1x Diavola | Totale € 20.50 | ✅ Pass |
+| T02 | Ordine vuoto | Nessuna pizza | Warning "Ordine vuoto" | ✅ Pass |
+| T03 | Listino mancante | 1x Pizza, listino null | Errore configurazione | ✅ Pass |
+| T04 | Raggruppamento | 3x Margherita separate | `3x Margherita` in 1 riga | ✅ Pass |
+
+---
+
+## 🔜 Sviluppi Futuri
+
+- [ ] 🖨️ **Stampa fisica** dello scontrino
+- [ ] 💾 **Salvataggio automatico** post-visualizzazione
+- [ ] 📧 **Invio email** al cliente
+- [ ] 📱 **Interfaccia grafica** dedicata
+- [ ] 📊 **Export PDF**
+
+---
+
 <div align="center">
-Sviluppato da: Ardente & Taramelli (5^Ci)
-<br>
-📅 Anno Scolastico 2025/26
+
+**Sviluppato da:** Ardente & Taramelli (5^Ci)  
+📅 **Anno Scolastico 2025/26**
 
 </div>
