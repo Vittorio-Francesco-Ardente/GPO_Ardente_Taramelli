@@ -1,150 +1,102 @@
-# 🧾 Funzione `MostraScontrino_Click`
+💾 Funzione SalvaStorico_Click
+📋 Informazioni Generali
+Campo	Valore
+📁 File	SalvaStorico_Function.txt
+👥 Autori	Ardente, Taramelli
+🎓 Classe	5^Ci
+📅 Anno Scolastico	2025/26
+🔢 Versione	1.1
+🎯 Descrizione Generale
+Questa funzione salva i dettagli dell'ordine corrente su un file di testo denominato StoricoOrdini.txt. Il salvataggio avviene in modalità APPEND, quindi ogni nuovo ordine viene aggiunto in coda senza sovrascrivere i precedenti.
 
-## 📋 Informazioni Generali
+📝 Contenuto di ogni riga
+Ogni riga del file storico contiene: - 🆔 ID progressivo dell'ordine - 📅 Data e ora del salvataggio - 🍕 Dettaglio delle pizze ordinate (raggruppate per tipo con quantità)
 
-| Campo | Valore |
-|-------|--------|
-| **📁 File** | `MostraScontrino_Function.txt` |
-| **👥 Autori** | Ardente, Taramelli |
-| **🎓 Classe** | 5^Ci |
-| **📅 Anno Scolastico** | 2025/26 |
-| **🔢 Versione** | 1.1 |
-
----
-
-## 🎯 Descrizione Generale
-
-Questa funzione **calcola il totale dell'ordine corrente** e genera uno **scontrino fiscale formattato** che viene visualizzato a video tramite una MessageBox.
-
-### 📝 Contenuto dello scontrino
-
-Lo scontrino include:
-- 🏪 **Intestazione** con nome pizzeria (Ardente-Taramelli)
-- 📅 **Data e ora** corrente
-- 🔢 **Numero progressivo** dell'ordine
-- 🍕 **Dettaglio delle pizze** raggruppate per tipo con quantità
-- 💶 **Prezzo unitario** e subtotale per ogni tipo di pizza
-- 💰 **Totale complessivo** dell'ordine
-- 😊 **Messaggio di ringraziamento**
-
----
-
-## 💡 A Cosa Serve
-
+💡 A Cosa Serve
 La funzione è fondamentale per:
 
-1. 👁️ **Permettere al cliente** di visualizzare il conto prima del pagamento
-2. 📊 **Fornire un riepilogo dettagliato** dell'ordine
-3. 🧮 **Calcolare automaticamente** il totale basandosi sul listino prezzi
-4. 📦 **Raggruppare pizze uguali** per una lettura più chiara
-5. 🆔 **Generare un documento fiscale** con ID univoco per tracciabilità
-
----
-
-## ⚙️ Come Funziona
-
-```mermaid
+📚 Mantenere uno storico persistente di tutti gli ordini effettuati
+📊 Permettere analisi successive sulle vendite
+🕒 Tracciare l'attività della pizzeria nel tempo
+📈 Fornire dati per statistiche e reportistica
+🔒 Backup delle informazioni ordini in caso di necessità
+⚙️ Come Funziona
 graph TD
-    A[👤 Utente clicca Conto] --> B{🍕 Ci sono pizze?}
+    A[👤 Utente clicca Salva Storico] --> B{🍕 Ci sono pizze?}
     B -->|❌ No| C[⚠️ Messaggio: Ordine vuoto]
-    B -->|✅ Sì| D{💶 Listino disponibile?}
-    D -->|❌ No| E[⚠️ Errore configurazione]
-    D -->|✅ Sì| F[📊 Raggruppa pizze LINQ]
-    F --> G[💰 Calcola subtotali]
-    G --> H[➕ Somma totale]
-    H --> I[🎨 Formatta scontrino ASCII]
-    I --> J[📱 Mostra MessageBox]
-```
+    B -->|✅ Sì| D{📂 Percorso valido?}
+    D -->|❌ No| E[⚠️ Errore percorso]
+    D -->|✅ Sì| F{🔓 Permessi OK?}
+    F -->|❌ No| G[⚠️ Permessi negati]
+    F -->|✅ Sì| H[📊 Raggruppa pizze LINQ]
+    H --> I[📝 Formatta riga log]
+    I --> J[💾 Scrivi su file APPEND]
+    J --> K[✅ Conferma salvataggio]
+🔄 Flusso operativo
+✅ Verifica che ci siano pizze nell'ordine
+🔍 Verifica la validità del percorso file
+🔒 Controlla i permessi di scrittura nella directory
+📊 Raggruppa le pizze per tipo usando LINQ
+📝 Formatta la riga di log con ID, data/ora e dettaglio pizze
+💾 Scrive sul file in modalità append (aggiunge in coda)
+✅ Conferma l'avvenuto salvataggio all'utente
+🛡️ Controlli Eseguiti
+#	Controllo	Descrizione
+✅ 1	Inizializzazione	Verifica inizializzazione controllo Ordini_Lista
+✅ 2	Ordine vuoto	Verifica presenza almeno una pizza nell'ordine
+✅ 3	Percorso valido	Verifica validità percorso file
+✅ 4	Permessi	Verifica permessi di scrittura nella directory
+✅ 5	Elementi validi	Filtraggio e validazione elementi della lista
+✅ 6	File bloccato	Verifica file non bloccato da altro processo
+✅ 7	Eccezioni I/O	Gestione eccezioni I/O multiple (dettagliate)
+📄 Formato File Output
+Il file StoricoOrdini.txt ha questo formato:
 
-### 🔄 Flusso operativo
-
-1. ✅ Verifica che ci siano pizze nell'ordine
-2. 🔍 Verifica che il listino prezzi sia disponibile
-3. 📊 Raggruppa le pizze per tipo usando LINQ
-4. 💰 Per ogni gruppo calcola: `quantità × prezzo unitario = subtotale`
-5. ➕ Somma tutti i subtotali per ottenere il totale
-6. 🎨 Formatta lo scontrino con caratteri ASCII art
-7. 📱 Visualizza lo scontrino in una MessageBox
-
----
-
-## 🛡️ Controlli Eseguiti
-
-| # | Controllo | Descrizione |
-|---|-----------|-------------|
-| ✅ 1 | **Inizializzazione** | Verifica inizializzazione controllo `Ordini_Lista` |
-| ✅ 2 | **Ordine vuoto** | Verifica presenza almeno una pizza nell'ordine |
-| ✅ 3 | **Listino prezzi** | Verifica disponibilità listino prezzi |
-| ✅ 4 | **Elementi validi** | Filtraggio elementi nulli o vuoti dalla lista |
-| ✅ 5 | **Prezzi mancanti** | Gestione prezzi mancanti (usa prezzo default € 6,00) |
-| ✅ 6 | **Eccezioni** | Gestione eccezioni durante l'elaborazione |
-
----
-
-## 🔌 Collegamento al Form
-
-### Metodo 1: Nel costruttore
-```csharp
+ID: 0001 | DATA/ORA: 15/01/2026 14:30:25 | ORDINE: 2x Margherita, 1x Capricciosa
+ID: 0002 | DATA/ORA: 15/01/2026 15:45:12 | ORDINE: 1x Marinara, 3x Quattro formaggi
+ID: 0003 | DATA/ORA: 15/01/2026 16:20:08 | ORDINE: 1x Salmone, 1x Vegetariana
+🔍 Struttura Riga
+Campo	Formato	Descrizione
+ID	XXXX	Numero progressivo ordine (4 cifre, con zeri iniziali)
+DATA/ORA	dd/MM/yyyy HH:mm:ss	Timestamp del salvataggio
+ORDINE	Nx NomePizza	Elenco pizze raggruppate (separati da virgola)
+🔌 Collegamento al Form
+Metodo 1: Nel costruttore
 // Nel costruttore Form1()
-this.Conto_Button.Click += new System.EventHandler(this.MostraScontrino_Click);
-```
-
-### Metodo 2: Direttamente nel codice
-```csharp
-Conto_Button.Click += MostraScontrino_Click;
-```
-
----
-
-## 🧪 Test di Sistema Correlati
-
-| Test | Descrizione |
-|------|-------------|
-| **TEST 13** | ❌ Scontrino Ordine Vuoto |
-| **TEST 14** | ✅ Scontrino Con Ordine Valido |
-| **TEST 15** | ⚠️ Scontrino Prezzi Non Configurati |
-| **TEST 16** | 📊 Scontrino Raggruppamento Pizze |
-| **TEST 17** | 💰 Scontrino Calcolo Totale |
-| **TEST 18** | 🆔 Scontrino ID Ordine |
-| **TEST 25** | 🔒 Scontrino Tavolo Occupato |
-
----
-
-## 🧰 Metodi per Test Automatizzati
-
-### `GeneraScontrinoPerTest()`
-```csharp
-public (bool success, decimal totale, string dettaglio) GeneraScontrinoPerTest()
-```
-
-**Descrizione:**
-- 🧪 Genera lo scontrino senza visualizzazione grafica
-- 🎯 Utile per Unit Test
-- 🚫 Non mostra MessageBox
-
-**Ritorna una tupla con:**
-- `success` (bool): `true` se la generazione è riuscita
-- `totale` (decimal): Importo totale calcolato
-- `dettaglio` (string): Stringa con il dettaglio dello scontrino
-
-**Esempio di utilizzo:**
-```csharp
-var (success, totale, dettaglio) = GeneraScontrinoPerTest();
-
-if (success)
+this.SalvaStorico_Button.Click += new System.EventHandler(this.SalvaStorico_Click);
+Metodo 2: Direttamente nel codice
+SalvaStorico_Button.Click += SalvaStorico_Click;
+🧪 Test di Sistema Correlati
+Test	Descrizione
+TEST 19	❌ Salvataggio Ordine Vuoto
+TEST 20	✅ Salvataggio Ordine Valido
+TEST 21	📝 Salvataggio Append File
+TEST 22	📊 Salvataggio Formato Dati
+TEST 23	⚠️ Salvataggio Errore Scrittura
+TEST 24	🔒 Salvataggio Tavolo Occupato
+🧰 Metodi per Test Automatizzati
+1️⃣ SalvaStoricoPerTest()
+public (bool success, string messaggio) SalvaStoricoPerTest(string percorsoFile = null)
+📝 Salva lo storico senza visualizzare MessageBox
+🎯 Utile per Unit Test
+↩️ Ritorna: tupla (success, messaggio)
+2️⃣ VerificaEsistenzaFileStoricoPerTest()
+public bool VerificaEsistenzaFileStoricoPerTest(string percorsoFile = "StoricoOrdini.txt")
+🔍 Verifica l'esistenza del file storico
+↩️ Ritorna: true se il file esiste, false altrimenti
+3️⃣ LeggiUltimaRigaStoricoPerTest()
+public string LeggiUltimaRigaStoricoPerTest(string percorsoFile = "StoricoOrdini.txt")
+📖 Legge l'ultima riga del file storico
+↩️ Ritorna: ultima riga del file, o stringa vuota se errore
+4️⃣ ContaRigheStoricoPerTest()
+public int ContaRigheStoricoPerTest(string percorsoFile = "StoricoOrdini.txt")
+🔢 Conta il numero di righe nel file storico
+↩️ Ritorna: numero di righe, o -1 se errore
+💻 Codice Sorgente
+private void SalvaStorico_Click(object sender, EventArgs e)
 {
-    Console.WriteLine($"Totale: €{totale:F2}");
-    Console.WriteLine(dettaglio);
-}
-```
+    const string NOME_FILE_STORICO = "StoricoOrdini.txt";
 
----
-
-## 💻 Codice Sorgente
-
-```csharp
-private void MostraScontrino_Click(object sender, EventArgs e)
-{
     // CONTROLLO 1: Verifica inizializzazione
     if (Ordini_Lista == null)
     {
@@ -162,22 +114,67 @@ private void MostraScontrino_Click(object sender, EventArgs e)
     if (Ordini_Lista.Items.Count == 0)
     {
         MessageBox.Show(
-            "📋 Nessun ordine presente per calcolare il conto.\n\n" +
-            "🍕 Aggiungi almeno una pizza all'ordine prima di richiedere lo scontrino.",
-            "⚠️ Ordine Vuoto",
+            "📋 Nessun ordine da salvare.\n\n" +
+            "🍕 Aggiungi almeno una pizza all'ordine prima di salvare lo storico.",
+            "ℹ️ Ordine Vuoto",
             MessageBoxButtons.OK,
-            MessageBoxIcon.Warning
+            MessageBoxIcon.Information
         );
         return;
     }
 
-    // CONTROLLO 3: Verifica listino prezzi
-    if (listinoPrezzi == null || listinoPrezzi.Count == 0)
+    // CONTROLLO 3: Verifica validità percorso
+    string percorsoCompleto;
+    try
+    {
+        percorsoCompleto = Path.Combine(
+            AppDomain.CurrentDomain.BaseDirectory,
+            NOME_FILE_STORICO
+        );
+
+        if (string.IsNullOrWhiteSpace(percorsoCompleto))
+        {
+            throw new ArgumentException("Percorso file non valido.");
+        }
+    }
+    catch (Exception ex)
     {
         MessageBox.Show(
-            "⚠️ Errore: Listino prezzi non disponibile.\n\n" +
-            "📞 Contattare l'amministratore del sistema.",
-            "❌ Errore Configurazione",
+            $"⚠️ Errore nella configurazione del percorso file:\n\n" +
+            $"❌ {ex.Message}",
+            "❌ Errore Percorso",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+        );
+        return;
+    }
+
+    // CONTROLLO 4: Verifica permessi scrittura
+    try
+    {
+        string directory = Path.GetDirectoryName(percorsoCompleto);
+        if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+    }
+    catch (UnauthorizedAccessException)
+    {
+        MessageBox.Show(
+            "🔒 Non si dispone dei permessi necessari per scrivere nella directory.\n\n" +
+            "📞 Contattare l'amministratore di sistema.",
+            "❌ Permessi Negati",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+        );
+        return;
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show(
+            $"⚠️ Errore durante la verifica della directory:\n\n" +
+            $"❌ {ex.Message}",
+            "❌ Errore Directory",
             MessageBoxButtons.OK,
             MessageBoxIcon.Error
         );
@@ -186,33 +183,18 @@ private void MostraScontrino_Click(object sender, EventArgs e)
 
     try
     {
-        decimal totale = 0m;
-        StringBuilder sb = new StringBuilder();
-
-        // INTESTAZIONE SCONTRINO
-        sb.AppendLine("╔══════════════════════════════════════╗");
-        sb.AppendLine("║    🍕 PIZZERIA ARDENTE-TARAMELLI 🍕    ║");
-        sb.AppendLine("║           5^Ci - 2025/26              ║");
-        sb.AppendLine("╠══════════════════════════════════════╣");
-        sb.AppendLine($"║  📅 Data: {DateTime.Now:dd/MM/yyyy}                   ║");
-        sb.AppendLine($"║  🕐 Ora:  {DateTime.Now:HH:mm:ss}                      ║");
-        sb.AppendLine($"║  🔢 Ordine N.: {idOrdineProgressivo.ToString().PadLeft(4, '0')}                 ║");
-        sb.AppendLine("╠══════════════════════════════════════╣");
-        sb.AppendLine("║  QTÀ   DESCRIZIONE          IMPORTO  ║");
-        sb.AppendLine("╠══════════════════════════════════════╣");
-
-        // CONTROLLO 4: Filtra elementi validi
-        var listaPizze = Ordini_Lista.Items
+        // CONTROLLO 5: Filtra elementi validi
+        var elementiValidi = Ordini_Lista.Items
             .Cast<object>()
             .Where(item => item != null)
             .Select(item => item.ToString())
-            .Where(s => !string.IsNullOrWhiteSpace(s));
+            .Where(s => !string.IsNullOrWhiteSpace(s))
+            .ToList();
 
-        if (!listaPizze.Any())
+        if (elementiValidi.Count == 0)
         {
             MessageBox.Show(
-                "⚠️ L'ordine contiene solo elementi non validi.\n\n" +
-                "🗑️ Svuota l'ordine e riprova.",
+                "⚠️ L'ordine non contiene elementi validi da salvare.",
                 "❌ Ordine Non Valido",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning
@@ -221,65 +203,98 @@ private void MostraScontrino_Click(object sender, EventArgs e)
         }
 
         // Raggruppa pizze per tipo
-        var pizzeRaggruppate = listaPizze.GroupBy(p => p);
+        var dettaglioPizze = elementiValidi
+            .GroupBy(p => p)
+            .Select(g => $"{g.Count()}x {g.Key}");
 
-        // ELABORAZIONE RIGHE SCONTRINO
-        foreach (var gruppo in pizzeRaggruppate)
+        string stringaPizze = string.Join(", ", dettaglioPizze);
+
+        // Costruisce riga log
+        StringBuilder logLine = new StringBuilder();
+        logLine.Append($"ID: {idOrdineProgressivo:0000} | ");
+        logLine.Append($"DATA/ORA: {DateTime.Now:dd/MM/yyyy HH:mm:ss} | ");
+        logLine.Append($"ORDINE: {stringaPizze}");
+
+        // CONTROLLO 6: Verifica file non bloccato
+        if (File.Exists(percorsoCompleto))
         {
-            string nomePizza = gruppo.Key;
-            int quantita = gruppo.Count();
-
-            // CONTROLLO 5: Gestione prezzo mancante
-            decimal prezzoUnitario;
-            if (listinoPrezzi.ContainsKey(nomePizza))
+            try
             {
-                prezzoUnitario = listinoPrezzi[nomePizza];
+                using (FileStream fs = File.Open(percorsoCompleto, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                {
+                    // File accessibile
+                }
             }
-            else
+            catch (IOException)
             {
-                // Prezzo predefinito per pizze non configurate
-                prezzoUnitario = 6.00m;
-
-                System.Diagnostics.Debug.WriteLine(
-                    $"[WARNING] Prezzo non trovato per '{nomePizza}'. Applicato prezzo default: € 6,00"
+                MessageBox.Show(
+                    "🔒 Il file dello storico è attualmente in uso da un altro programma.\n\n" +
+                    "📝 Chiudere l'applicazione che sta utilizzando il file e riprovare.",
+                    "⚠️ File in Uso",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
                 );
+                return;
             }
-
-            // Calcolo subtotale riga
-            decimal subtotaleRiga = prezzoUnitario * quantita;
-            totale += subtotaleRiga;
-
-            // Formattazione riga scontrino
-            string rigaFormattata = $"║  {quantita}x   {nomePizza.PadRight(18)} € {subtotaleRiga,7:F2} ║";
-            sb.AppendLine(rigaFormattata);
         }
 
-        // FOOTER SCONTRINO CON TOTALE
-        sb.AppendLine("╠══════════════════════════════════════╣");
-        sb.AppendLine($"║  💰 TOTALE ORDINE:          € {totale,7:F2} ║");
-        sb.AppendLine("╠══════════════════════════════════════╣");
-        sb.AppendLine("║                                      ║");
-        sb.AppendLine("║     😊 Grazie per averci scelto! 😊    ║");
-        sb.AppendLine("║        Ardente & Taramelli           ║");
-        sb.AppendLine("║            5^Ci - 2025/26            ║");
-        sb.AppendLine("╚══════════════════════════════════════╝");
+        // Scrittura su file (APPEND)
+        File.AppendAllText(
+            percorsoCompleto,
+            logLine.ToString() + Environment.NewLine,
+            Encoding.UTF8
+        );
 
-        // VISUALIZZAZIONE SCONTRINO
+        // Conferma operazione
         MessageBox.Show(
-            sb.ToString(),
-            $"🧾 Scontrino Fiscale - Ordine #{idOrdineProgressivo:0000}",
+            $"✅ Ordine #{idOrdineProgressivo:0000} salvato correttamente nello storico!\n\n" +
+            $"📝 File: {NOME_FILE_STORICO}\n" +
+            $"📂 Percorso: {percorsoCompleto}\n\n" +
+            $"👥 Ardente & Taramelli - 5^Ci - 2025/26",
+            "💾 Salvataggio Completato",
             MessageBoxButtons.OK,
             MessageBoxIcon.Information
         );
     }
-    catch (InvalidCastException ex)
+    // CONTROLLO 7: Gestione eccezioni I/O
+    catch (UnauthorizedAccessException ex)
     {
-        // CONTROLLO 6: Gestione errori di cast
         MessageBox.Show(
-            $"⚠️ Errore durante l'elaborazione degli elementi dell'ordine:\n\n" +
+            $"🔒 Accesso negato durante la scrittura del file:\n\n" +
             $"❌ {ex.Message}\n\n" +
-            "ℹ️ Alcuni elementi potrebbero non essere nel formato corretto.",
-            "❌ Errore Elaborazione",
+            "🔑 Verificare i permessi di scrittura.",
+            "❌ Errore Permessi",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+        );
+    }
+    catch (DirectoryNotFoundException ex)
+    {
+        MessageBox.Show(
+            $"📁 Directory non trovata:\n\n" +
+            $"❌ {ex.Message}",
+            "❌ Errore Directory",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+        );
+    }
+    catch (PathTooLongException ex)
+    {
+        MessageBox.Show(
+            $"📏 Il percorso del file è troppo lungo:\n\n" +
+            $"❌ {ex.Message}",
+            "❌ Errore Percorso",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+        );
+    }
+    catch (IOException ex)
+    {
+        MessageBox.Show(
+            $"💾 Errore di I/O durante il salvataggio:\n\n" +
+            $"❌ {ex.Message}\n\n" +
+            "💿 Verificare che il disco non sia pieno e che il file non sia protetto.",
+            "❌ Errore I/O",
             MessageBoxButtons.OK,
             MessageBoxIcon.Error
         );
@@ -287,155 +302,26 @@ private void MostraScontrino_Click(object sender, EventArgs e)
     catch (Exception ex)
     {
         MessageBox.Show(
-            $"⚠️ Si è verificato un errore imprevisto durante la generazione dello scontrino:\n\n" +
-            $"❌ {ex.Message}\n\n" +
+            $"⚠️ Si è verificato un errore imprevisto durante il salvataggio:\n\n" +
+            $"📋 Tipo: {ex.GetType().Name}\n" +
+            $"❌ Messaggio: {ex.Message}\n\n" +
             "📞 Contattare l'assistenza tecnica.",
-            "❌ Errore Scontrino",
+            "❌ Errore Salvataggio",
             MessageBoxButtons.OK,
             MessageBoxIcon.Error
         );
     }
 }
-```
+📊 Esempio di Output
+ID: 0001 | DATA/ORA: 15/01/2026 14:30:25 | ORDINE: 2x Margherita, 1x Capricciosa
+ID: 0002 | DATA/ORA: 15/01/2026 15:45:12 | ORDINE: 1x Marinara, 3x Quattro formaggi
+ID: 0003 | DATA/ORA: 15/01/2026 16:20:08 | ORDINE: 1x Salmone, 1x Vegetariana, 2x Americana
+ID: 0004 | DATA/ORA: 15/01/2026 17:05:33 | ORDINE: 4x Margherita
+ID: 0005 | DATA/ORA: 15/01/2026 18:15:47 | ORDINE: 1x Prosciutto e funghi, 1x Salamino
+👥 Credits
+Sviluppato da: Ardente & Taramelli
+Classe: 5^Ci
+Anno Scolastico: 2025/26
+Versione: 1.1
 
----
-
-## 📄 Esempio di Output Scontrino
-
-```
-╔══════════════════════════════════════╗
-║    🍕 PIZZERIA ARDENTE-TARAMELLI 🍕    ║
-║           5^Ci - 2025/26              ║
-╠══════════════════════════════════════╣
-║  📅 Data: 15/01/2026                   ║
-║  🕐 Ora:  14:30:25                      ║
-║  🔢 Ordine N.: 0001                 ║
-╠══════════════════════════════════════╣
-║  QTÀ   DESCRIZIONE          IMPORTO  ║
-╠══════════════════════════════════════╣
-║  2x   Margherita           €   10.00 ║
-║  1x   Capricciosa          €    8.00 ║
-║  1x   Quattro formaggi     €    8.50 ║
-╠══════════════════════════════════════╣
-║  💰 TOTALE ORDINE:          €   26.50 ║
-╠══════════════════════════════════════╣
-║                                      ║
-║     😊 Grazie per averci scelto! 😊    ║
-║        Ardente & Taramelli           ║
-║            5^Ci - 2025/26            ║
-╚══════════════════════════════════════╝
-```
-
----
-
-## 📊 Logica di Calcolo
-
-### Formula del Subtotale
-```
-Subtotale = Quantità × Prezzo Unitario
-```
-
-### Formula del Totale
-```
-Totale = Σ (Subtotale di ogni tipo di pizza)
-```
-
-### Esempio pratico
-
-| Pizza | Quantità | Prezzo Unit. | Subtotale |
-|-------|----------|--------------|-----------|
-| 🍕 Margherita | 2 | € 5.00 | € 10.00 |
-| 🍕 Capricciosa | 1 | € 8.00 | € 8.00 |
-| 🍕 4 Formaggi | 1 | € 8.50 | € 8.50 |
-| **TOTALE** | **4** | - | **€ 26.50** |
-
----
-
-## 🔍 Gestione Prezzi Mancanti
-
-Se una pizza **non è presente nel listino**, viene applicato un **prezzo default di € 6,00**.
-
-```csharp
-decimal prezzoUnitario;
-if (listinoPrezzi.ContainsKey(nomePizza))
-{
-    prezzoUnitario = listinoPrezzi[nomePizza];
-}
-else
-{
-    // ⚠️ Prezzo predefinito
-    prezzoUnitario = 6.00m;
-    
-    // 📝 Log per debug
-    Debug.WriteLine($"[WARNING] Prezzo non trovato per '{nomePizza}'");
-}
-```
-
----
-
-## 🎨 Caratteri ASCII Box-Drawing
-
-Lo scontrino utilizza caratteri **Unicode Box-Drawing** per creare il bordo:
-
-| Carattere | Codice | Uso |
-|-----------|--------|-----|
-| ╔ | U+2554 | Angolo alto sinistro |
-| ╗ | U+2557 | Angolo alto destro |
-| ╚ | U+255A | Angolo basso sinistro |
-| ╝ | U+255D | Angolo basso destro |
-| ║ | U+2551 | Bordo verticale |
-| ═ | U+2550 | Bordo orizzontale |
-| ╠ | U+2560 | T sinistra |
-| ╣ | U+2563 | T destra |
-
----
-
-## 🚨 Gestione Errori
-
-### Errore 1: Ordine Vuoto
-```
-📋 Nessun ordine presente per calcolare il conto.
-
-🍕 Aggiungi almeno una pizza all'ordine prima di richiedere lo scontrino.
-```
-
-### Errore 2: Listino Non Disponibile
-```
-⚠️ Errore: Listino prezzi non disponibile.
-
-📞 Contattare l'amministratore del sistema.
-```
-
-### Errore 3: Elementi Non Validi
-```
-⚠️ L'ordine contiene solo elementi non validi.
-
-🗑️ Svuota l'ordine e riprova.
-```
-
----
-
-## 🔄 Integrazione con Altri Componenti
-
-### Dipendenze
-- `Ordini_Lista` (ListBox): contiene le pizze ordinate
-- `listinoPrezzi` (Dictionary): mappa pizza → prezzo
-- `idOrdineProgressivo` (int): numero progressivo dell'ordine
-
-### Componenti correlati
-- 🍕 `AggiungiPizza()`: aggiunge pizze all'ordine
-- 💾 `SalvaStorico()`: salva l'ordine su file
-- 🗑️ `SvuotaOrdine()`: pulisce l'ordine corrente
-
----
-
-## 👥 Credits
-
-**Sviluppato da:** Ardente & Taramelli  
-**Classe:** 5^Ci  
-**Anno Scolastico:** 2025/26  
-**Versione:** 1.1
-
----
-
-> 💡 **Nota:** Questa funzione fa parte del sistema gestionale per pizzerie sviluppato come progetto scolastico. Lo scontrino generato è a scopo dimostrativo e non ha valore fiscale legale.
+💡 Nota: Questa funzione fa parte del sistema gestionale per pizzerie sviluppato come progetto scolastico.
