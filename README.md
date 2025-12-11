@@ -1,6 +1,6 @@
 # 🧾 Funzione `MostraScontrino_Click`
 
-**File:** `MostraScontrino_Function.txt` | **Versione:** 1.1
+**Branch:** `feature/MostraScontrino` | **Stato:** ✅ Completato
 
 ---
 
