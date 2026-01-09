@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="it">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Progetto_Ardente_Taramelli: 💾 Funzione &lt;tt&gt;SalvaStorico_Click&lt;/tt&gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Progetto_Ardente_Taramelli<span id="projectnumber">&#160;1.1</span>
+   </div>
+   <div id="projectbrief">Progetto realizzato da Vittorio Francesco Ardente e Nicholas Taramelli!</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generato da Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Cerca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('a00111.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Caricamento in corso...</div>
+<div class="SRStatus" id="Searching">Ricerca in corso...</div>
+<div class="SRStatus" id="NoMatches">Nessun risultato</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">💾 Funzione &lt;tt&gt;SalvaStorico_Click&lt;/tt&gt;</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md91"></a> </p>
+<h1><a class="anchor" id="autotoc_md92"></a>
+📋 Informazioni Generali</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Campo   </th><th class="markdownTableHeadNone">Valore    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>📁 File</b>   </td><td class="markdownTableBodyNone"><code>SalvaStorico_Function.txt</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>👥 Autori</b>   </td><td class="markdownTableBodyNone">Ardente, Taramelli    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>🎓 Classe</b>   </td><td class="markdownTableBodyNone">5^Ci    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>📅 Anno Scolastico</b>   </td><td class="markdownTableBodyNone">2025/26    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>🔢 Versione</b>   </td><td class="markdownTableBodyNone">1.1   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md94"></a>
+🎯 Descrizione Generale</h1>
+<p>Questa funzione <b>salva i dettagli dell'ordine corrente</b> su un file di testo denominato <code>StoricoOrdini.txt</code>. Il salvataggio avviene in <b>modalità APPEND</b>, quindi ogni nuovo ordine viene aggiunto in coda senza sovrascrivere i precedenti.</p>
+<h2><a class="anchor" id="autotoc_md95"></a>
+📝 Contenuto di ogni riga</h2>
+<p>Ogni riga del file storico contiene:</p><ul>
+<li>🆔 <b>ID progressivo</b> dell'ordine</li>
+<li>📅 <b>Data e ora</b> del salvataggio</li>
+<li>🍕 <b>Dettaglio delle pizze</b> ordinate (raggruppate per tipo con quantità)</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md97"></a>
+💡 A Cosa Serve</h1>
+<p>La funzione è fondamentale per:</p>
+<ol type="1">
+<li>📚 <b>Mantenere uno storico persistente</b> di tutti gli ordini effettuati</li>
+<li>📊 <b>Permettere analisi successive</b> sulle vendite</li>
+<li>🕒 <b>Tracciare l'attività</b> della pizzeria nel tempo</li>
+<li>📈 <b>Fornire dati</b> per statistiche e reportistica</li>
+<li>🔒 <b>Backup</b> delle informazioni ordini in caso di necessità</li>
+</ol>
+<hr  />
+<h1><a class="anchor" id="autotoc_md99"></a>
+⚙️ Come Funziona</h1>
+<div class="fragment"><div class="line">graph TD</div>
+<div class="line">    A[👤 Utente clicca Salva Storico] --&gt; B{🍕 Ci sono pizze?}</div>
+<div class="line">    B --&gt;|❌ No| C[⚠️ Messaggio: Ordine vuoto]</div>
+<div class="line">    B --&gt;|✅ Sì| D{📂 Percorso valido?}</div>
+<div class="line">    D --&gt;|❌ No| E[⚠️ Errore percorso]</div>
+<div class="line">    D --&gt;|✅ Sì| F{🔓 Permessi OK?}</div>
+<div class="line">    F --&gt;|❌ No| G[⚠️ Permessi negati]</div>
+<div class="line">    F --&gt;|✅ Sì| H[📊 Raggruppa pizze LINQ]</div>
+<div class="line">    H --&gt; I[📝 Formatta riga log]</div>
+<div class="line">    I --&gt; J[💾 Scrivi su file APPEND]</div>
+<div class="line">    J --&gt; K[✅ Conferma salvataggio]</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md100"></a>
+🔄 Flusso operativo</h2>
+<ol type="1">
+<li>✅ Verifica che ci siano pizze nell'ordine</li>
+<li>🔍 Verifica la validità del percorso file</li>
+<li>🔒 Controlla i permessi di scrittura nella directory</li>
+<li>📊 Raggruppa le pizze per tipo usando LINQ</li>
+<li>📝 Formatta la riga di log con ID, data/ora e dettaglio pizze</li>
+<li>💾 Scrive sul file in modalità append (aggiunge in coda)</li>
+<li>✅ Conferma l'avvenuto salvataggio all'utente</li>
+</ol>
+<hr  />
+<h1><a class="anchor" id="autotoc_md102"></a>
+🛡️ Controlli Eseguiti</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">#   </th><th class="markdownTableHeadNone">Controllo   </th><th class="markdownTableHeadNone">Descrizione    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">✅ 1   </td><td class="markdownTableBodyNone"><b>Inizializzazione</b>   </td><td class="markdownTableBodyNone">Verifica inizializzazione controllo <code>Ordini_Lista</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">✅ 2   </td><td class="markdownTableBodyNone"><b>Ordine vuoto</b>   </td><td class="markdownTableBodyNone">Verifica presenza almeno una pizza nell'ordine    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">✅ 3   </td><td class="markdownTableBodyNone"><b>Percorso valido</b>   </td><td class="markdownTableBodyNone">Verifica validità percorso file    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">✅ 4   </td><td class="markdownTableBodyNone"><b>Permessi</b>   </td><td class="markdownTableBodyNone">Verifica permessi di scrittura nella directory    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">✅ 5   </td><td class="markdownTableBodyNone"><b>Elementi validi</b>   </td><td class="markdownTableBodyNone">Filtraggio e validazione elementi della lista    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">✅ 6   </td><td class="markdownTableBodyNone"><b>File bloccato</b>   </td><td class="markdownTableBodyNone">Verifica file non bloccato da altro processo    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">✅ 7   </td><td class="markdownTableBodyNone"><b>Eccezioni I/O</b>   </td><td class="markdownTableBodyNone">Gestione eccezioni I/O multiple (dettagliate)   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md104"></a>
+📄 Formato File Output</h1>
+<p>Il file <code>StoricoOrdini.txt</code> ha questo formato:</p>
+<div class="fragment"><div class="line">ID: 0001 | DATA/ORA: 15/01/2026 14:30:25 | ORDINE: 2x Margherita, 1x Capricciosa</div>
+<div class="line">ID: 0002 | DATA/ORA: 15/01/2026 15:45:12 | ORDINE: 1x Marinara, 3x Quattro formaggi</div>
+<div class="line">ID: 0003 | DATA/ORA: 15/01/2026 16:20:08 | ORDINE: 1x Salmone, 1x Vegetariana</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md105"></a>
+🔍 Struttura Riga</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Campo   </th><th class="markdownTableHeadNone">Formato   </th><th class="markdownTableHeadNone">Descrizione    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>ID</b>   </td><td class="markdownTableBodyNone"><code>XXXX</code>   </td><td class="markdownTableBodyNone">Numero progressivo ordine (4 cifre, con zeri iniziali)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>DATA/ORA</b>   </td><td class="markdownTableBodyNone"><code>dd/MM/yyyy HH:mm:ss</code>   </td><td class="markdownTableBodyNone">Timestamp del salvataggio    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>ORDINE</b>   </td><td class="markdownTableBodyNone"><code>Nx NomePizza</code>   </td><td class="markdownTableBodyNone">Elenco pizze raggruppate (separati da virgola)   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md107"></a>
+🔌 Collegamento al Form</h1>
+<h2><a class="anchor" id="autotoc_md108"></a>
+Metodo 1: Nel costruttore</h2>
+<div class="fragment"><div class="line"><span class="comment">// Nel costruttore Form1()</span></div>
+<div class="line">this.SalvaStorico_Button.Click += <span class="keyword">new</span> System.EventHandler(this.SalvaStorico_Click);</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md109"></a>
+Metodo 2: Direttamente nel codice</h2>
+<div class="fragment"><div class="line">SalvaStorico_Button.Click += SalvaStorico_Click;</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md111"></a>
+🧪 Test di Sistema Correlati</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Test   </th><th class="markdownTableHeadNone">Descrizione    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>TEST 19</b>   </td><td class="markdownTableBodyNone">❌ Salvataggio Ordine Vuoto    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>TEST 20</b>   </td><td class="markdownTableBodyNone">✅ Salvataggio Ordine Valido    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>TEST 21</b>   </td><td class="markdownTableBodyNone">📝 Salvataggio Append File    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>TEST 22</b>   </td><td class="markdownTableBodyNone">📊 Salvataggio Formato Dati    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><b>TEST 23</b>   </td><td class="markdownTableBodyNone">⚠️ Salvataggio Errore Scrittura    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><b>TEST 24</b>   </td><td class="markdownTableBodyNone">🔒 Salvataggio Tavolo Occupato   </td></tr>
+</table>
+<hr  />
+<h1><a class="anchor" id="autotoc_md113"></a>
+🧰 Metodi per Test Automatizzati</h1>
+<h2><a class="anchor" id="autotoc_md114"></a>
+1️⃣ &lt;tt&gt;SalvaStoricoPerTest()&lt;/tt&gt;</h2>
+<div class="fragment"><div class="line"><span class="keyword">public</span> (<span class="keywordtype">bool</span> success, <span class="keywordtype">string</span> messaggio) SalvaStoricoPerTest(<span class="keywordtype">string</span> percorsoFile = <span class="keyword">null</span>)</div>
+</div><!-- fragment --><ul>
+<li>📝 Salva lo storico senza visualizzare MessageBox</li>
+<li>🎯 Utile per Unit Test</li>
+<li>↩️ Ritorna: tupla <code>(success, messaggio)</code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md115"></a>
+2️⃣ &lt;tt&gt;VerificaEsistenzaFileStoricoPerTest()&lt;/tt&gt;</h2>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">bool</span> VerificaEsistenzaFileStoricoPerTest(<span class="keywordtype">string</span> percorsoFile = <span class="stringliteral">&quot;StoricoOrdini.txt&quot;</span>)</div>
+</div><!-- fragment --><ul>
+<li>🔍 Verifica l'esistenza del file storico</li>
+<li>↩️ Ritorna: <code>true</code> se il file esiste, <code>false</code> altrimenti</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md116"></a>
+3️⃣ &lt;tt&gt;LeggiUltimaRigaStoricoPerTest()&lt;/tt&gt;</h2>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">string</span> LeggiUltimaRigaStoricoPerTest(<span class="keywordtype">string</span> percorsoFile = <span class="stringliteral">&quot;StoricoOrdini.txt&quot;</span>)</div>
+</div><!-- fragment --><ul>
+<li>📖 Legge l'ultima riga del file storico</li>
+<li>↩️ Ritorna: ultima riga del file, o stringa vuota se errore</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md117"></a>
+4️⃣ &lt;tt&gt;ContaRigheStoricoPerTest()&lt;/tt&gt;</h2>
+<div class="fragment"><div class="line"><span class="keyword">public</span> <span class="keywordtype">int</span> ContaRigheStoricoPerTest(<span class="keywordtype">string</span> percorsoFile = <span class="stringliteral">&quot;StoricoOrdini.txt&quot;</span>)</div>
+</div><!-- fragment --><ul>
+<li>🔢 Conta il numero di righe nel file storico</li>
+<li>↩️ Ritorna: numero di righe, o <code>-1</code> se errore</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md119"></a>
+💻 Codice Sorgente</h1>
+<div class="fragment"><div class="line"><span class="keyword">private</span> <span class="keywordtype">void</span> SalvaStorico_Click(<span class="keywordtype">object</span> sender, EventArgs e)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">string</span> NOME_FILE_STORICO = <span class="stringliteral">&quot;StoricoOrdini.txt&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// CONTROLLO 1: Verifica inizializzazione</span></div>
+<div class="line">    <span class="keywordflow">if</span> (Ordini_Lista == <span class="keyword">null</span>)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            <span class="stringliteral">&quot;⚠️ Errore di inizializzazione del controllo ordini.\n\n&quot;</span> +</div>
+<div class="line">            <span class="stringliteral">&quot;🔄 Riavviare l&#39;applicazione.&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Errore Sistema&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// CONTROLLO 2: Verifica ordine non vuoto</span></div>
+<div class="line">    <span class="keywordflow">if</span> (Ordini_Lista.Items.Count == 0)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            <span class="stringliteral">&quot;📋 Nessun ordine da salvare.\n\n&quot;</span> +</div>
+<div class="line">            <span class="stringliteral">&quot;🍕 Aggiungi almeno una pizza all&#39;ordine prima di salvare lo storico.&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;ℹ️ Ordine Vuoto&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Information</div>
+<div class="line">        );</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// CONTROLLO 3: Verifica validità percorso</span></div>
+<div class="line">    <span class="keywordtype">string</span> percorsoCompleto;</div>
+<div class="line">    <span class="keywordflow">try</span></div>
+<div class="line">    {</div>
+<div class="line">        percorsoCompleto = Path.Combine(</div>
+<div class="line">            AppDomain.CurrentDomain.BaseDirectory,</div>
+<div class="line">            NOME_FILE_STORICO</div>
+<div class="line">        );</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrWhiteSpace(percorsoCompleto))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Percorso file non valido.&quot;</span>);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            $<span class="stringliteral">&quot;⚠️ Errore nella configurazione del percorso file:\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;❌ {ex.Message}&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Errore Percorso&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// CONTROLLO 4: Verifica permessi scrittura</span></div>
+<div class="line">    <span class="keywordflow">try</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordtype">string</span> directory = Path.GetDirectoryName(percorsoCompleto);</div>
+<div class="line">        <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(directory) &amp;&amp; !Directory.Exists(directory))</div>
+<div class="line">        {</div>
+<div class="line">            Directory.CreateDirectory(directory);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">catch</span> (UnauthorizedAccessException)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            <span class="stringliteral">&quot;🔒 Non si dispone dei permessi necessari per scrivere nella directory.\n\n&quot;</span> +</div>
+<div class="line">            <span class="stringliteral">&quot;📞 Contattare l&#39;amministratore di sistema.&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Permessi Negati&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            $<span class="stringliteral">&quot;⚠️ Errore durante la verifica della directory:\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;❌ {ex.Message}&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Errore Directory&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">try</span></div>
+<div class="line">    {</div>
+<div class="line">        <span class="comment">// CONTROLLO 5: Filtra elementi validi</span></div>
+<div class="line">        var elementiValidi = Ordini_Lista.Items</div>
+<div class="line">            .Cast&lt;<span class="keywordtype">object</span>&gt;()</div>
+<div class="line">            .Where(item =&gt; item != <span class="keyword">null</span>)</div>
+<div class="line">            .Select(item =&gt; item.ToString())</div>
+<div class="line">            .Where(s =&gt; !<span class="keywordtype">string</span>.IsNullOrWhiteSpace(s))</div>
+<div class="line">            .ToList();</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">if</span> (elementiValidi.Count == 0)</div>
+<div class="line">        {</div>
+<div class="line">            MessageBox.Show(</div>
+<div class="line">                <span class="stringliteral">&quot;⚠️ L&#39;ordine non contiene elementi validi da salvare.&quot;</span>,</div>
+<div class="line">                <span class="stringliteral">&quot;❌ Ordine Non Valido&quot;</span>,</div>
+<div class="line">                MessageBoxButtons.OK,</div>
+<div class="line">                MessageBoxIcon.Warning</div>
+<div class="line">            );</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Raggruppa pizze per tipo</span></div>
+<div class="line">        var dettaglioPizze = elementiValidi</div>
+<div class="line">            .GroupBy(p =&gt; p)</div>
+<div class="line">            .Select(g =&gt; $<span class="stringliteral">&quot;{g.Count()}x {g.Key}&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordtype">string</span> stringaPizze = <span class="keywordtype">string</span>.Join(<span class="stringliteral">&quot;, &quot;</span>, dettaglioPizze);</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Costruisce riga log</span></div>
+<div class="line">        StringBuilder logLine = <span class="keyword">new</span> StringBuilder();</div>
+<div class="line">        logLine.Append($<span class="stringliteral">&quot;ID: {idOrdineProgressivo:0000} | &quot;</span>);</div>
+<div class="line">        logLine.Append($<span class="stringliteral">&quot;DATA/ORA: {DateTime.Now:dd/MM/yyyy HH:mm:ss} | &quot;</span>);</div>
+<div class="line">        logLine.Append($<span class="stringliteral">&quot;ORDINE: {stringaPizze}&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// CONTROLLO 6: Verifica file non bloccato</span></div>
+<div class="line">        <span class="keywordflow">if</span> (File.Exists(percorsoCompleto))</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keywordflow">try</span></div>
+<div class="line">            {</div>
+<div class="line">                <span class="keyword">using</span> (FileStream fs = File.Open(percorsoCompleto, FileMode.Open, FileAccess.ReadWrite, FileShare.None))</div>
+<div class="line">                {</div>
+<div class="line">                    <span class="comment">// File accessibile</span></div>
+<div class="line">                }</div>
+<div class="line">            }</div>
+<div class="line">            <span class="keywordflow">catch</span> (IOException)</div>
+<div class="line">            {</div>
+<div class="line">                MessageBox.Show(</div>
+<div class="line">                    <span class="stringliteral">&quot;🔒 Il file dello storico è attualmente in uso da un altro programma.\n\n&quot;</span> +</div>
+<div class="line">                    <span class="stringliteral">&quot;📝 Chiudere l&#39;applicazione che sta utilizzando il file e riprovare.&quot;</span>,</div>
+<div class="line">                    <span class="stringliteral">&quot;⚠️ File in Uso&quot;</span>,</div>
+<div class="line">                    MessageBoxButtons.OK,</div>
+<div class="line">                    MessageBoxIcon.Warning</div>
+<div class="line">                );</div>
+<div class="line">                <span class="keywordflow">return</span>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Scrittura su file (APPEND)</span></div>
+<div class="line">        File.AppendAllText(</div>
+<div class="line">            percorsoCompleto,</div>
+<div class="line">            logLine.ToString() + Environment.NewLine,</div>
+<div class="line">            Encoding.UTF8</div>
+<div class="line">        );</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// Conferma operazione</span></div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            $<span class="stringliteral">&quot;✅ Ordine #{idOrdineProgressivo:0000} salvato correttamente nello storico!\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;📝 File: {NOME_FILE_STORICO}\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;📂 Percorso: {percorsoCompleto}\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;👥 Ardente &amp; Taramelli - 5^Ci - 2025/26&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;💾 Salvataggio Completato&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Information</div>
+<div class="line">        );</div>
+<div class="line">    }</div>
+<div class="line">    <span class="comment">// CONTROLLO 7: Gestione eccezioni I/O</span></div>
+<div class="line">    <span class="keywordflow">catch</span> (UnauthorizedAccessException ex)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            $<span class="stringliteral">&quot;🔒 Accesso negato durante la scrittura del file:\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;❌ {ex.Message}\n\n&quot;</span> +</div>
+<div class="line">            <span class="stringliteral">&quot;🔑 Verificare i permessi di scrittura.&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Errore Permessi&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">catch</span> (DirectoryNotFoundException ex)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            $<span class="stringliteral">&quot;📁 Directory non trovata:\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;❌ {ex.Message}&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Errore Directory&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">catch</span> (PathTooLongException ex)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            $<span class="stringliteral">&quot;📏 Il percorso del file è troppo lungo:\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;❌ {ex.Message}&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Errore Percorso&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">catch</span> (IOException ex)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            $<span class="stringliteral">&quot;💾 Errore di I/O durante il salvataggio:\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;❌ {ex.Message}\n\n&quot;</span> +</div>
+<div class="line">            <span class="stringliteral">&quot;💿 Verificare che il disco non sia pieno e che il file non sia protetto.&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Errore I/O&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">catch</span> (Exception ex)</div>
+<div class="line">    {</div>
+<div class="line">        MessageBox.Show(</div>
+<div class="line">            $<span class="stringliteral">&quot;⚠️ Si è verificato un errore imprevisto durante il salvataggio:\n\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;📋 Tipo: {ex.GetType().Name}\n&quot;</span> +</div>
+<div class="line">            $<span class="stringliteral">&quot;❌ Messaggio: {ex.Message}\n\n&quot;</span> +</div>
+<div class="line">            <span class="stringliteral">&quot;📞 Contattare l&#39;assistenza tecnica.&quot;</span>,</div>
+<div class="line">            <span class="stringliteral">&quot;❌ Errore Salvataggio&quot;</span>,</div>
+<div class="line">            MessageBoxButtons.OK,</div>
+<div class="line">            MessageBoxIcon.Error</div>
+<div class="line">        );</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md121"></a>
+📊 Esempio di Output</h1>
+<div class="fragment"><div class="line">ID: 0001 | DATA/ORA: 15/01/2026 14:30:25 | ORDINE: 2x Margherita, 1x Capricciosa</div>
+<div class="line">ID: 0002 | DATA/ORA: 15/01/2026 15:45:12 | ORDINE: 1x Marinara, 3x Quattro formaggi</div>
+<div class="line">ID: 0003 | DATA/ORA: 15/01/2026 16:20:08 | ORDINE: 1x Salmone, 1x Vegetariana, 2x Americana</div>
+<div class="line">ID: 0004 | DATA/ORA: 15/01/2026 17:05:33 | ORDINE: 4x Margherita</div>
+<div class="line">ID: 0005 | DATA/ORA: 15/01/2026 18:15:47 | ORDINE: 1x Prosciutto e funghi, 1x Salamino</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md123"></a>
+👥 Credits</h1>
+<p><b>Sviluppato da:</b> Ardente &amp; Taramelli <br  />
+ <b>Classe:</b> 5^Ci <br  />
+ <b>Anno Scolastico:</b> 2025/26 <br  />
+ <b>Versione:</b> 1.1</p>
+<hr  />
+<blockquote class="doxtable">
+<p>&zwj;💡 <b>Nota:</b> Questa funzione fa parte del sistema gestionale per pizzerie sviluppato come progetto scolastico. </p>
+</blockquote>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generato da <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
