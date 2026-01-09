@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 🔥 GPO Ardente Taramelli – Verifica di laboratorio 2
 ![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
@@ -80,4 +79,5 @@ Questo progetto utilizza **GitFlow** per l'organizzazione dei branch:
 La documentazione completa del progetto generata con Doxygen è disponibile online:
 
 🔗 **[Visualizza Documentazione](https://vittorio-francesco-ardente.github.io/GPO_Ardente_Taramelli/)**
->>>>>>> df5b7928b06135097afa0b7eb9a263dfff317c1d
+
+
